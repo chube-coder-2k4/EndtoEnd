@@ -14,9 +14,9 @@ public class DateController {
 
     @PostMapping("/validate-date")
     public DateResponse validateDate(@RequestBody DateRequest req) {
-//        if (!isNumeric(req.day) || !isNumeric(req.month) || !isNumeric(req.year)) {
-//            return new DateResponse(false, "❌ Invalid input: All fields must be numbers.");
-//        }
+        if (!isNumeric(req.day) || !isNumeric(req.month) || !isNumeric(req.year)) {
+            return new DateResponse(false, "❌ Invalid input: All fields must be numbers.");
+        }
 
         int d = Integer.parseInt(req.day);
         int m = Integer.parseInt(req.month);
