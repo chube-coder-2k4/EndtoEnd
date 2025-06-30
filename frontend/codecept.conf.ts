@@ -7,17 +7,18 @@ setHeadlessWhen(process.env.HEADLESS);
 setCommonPlugins();
 
 export const config: CodeceptJS.MainConfig = {
-  tests: './*_test.ts',
+  tests: './tests/**/*_test.{js,ts}',
   output: './output',
   helpers: {
-    Playwright: {
-      browser: 'chromium',
-      url: 'http://localhost',
-      show: true
+    REST: {
+      endpoint: 'http://localhost:8080', // Đổi thành địa chỉ backend của bạn
+      defaultHeaders: {
+        'Content-Type': 'application/json'
+      }
     }
   },
   include: {
     I: './steps_file'
   },
   name: 'codeceptjs-demo'
-}
+};

@@ -1,6 +1,6 @@
 Feature('Date Time Checker Web');
 
-const baseUrl = 'http://127.0.0.1:5500/index.html';
+const baseUrl = 'http://127.0.0.1:5500/frontend/index.html';
 
 Scenario('Check valid leap year date (29/2/2024)', async ({ I }) => {
   I.amOnPage(baseUrl);
